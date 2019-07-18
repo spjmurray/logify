@@ -1,88 +1,463 @@
-{"level":"info","ts":1563385965.3977811,"logger":"main","msg":"couchbase-operator","version":"2.0.0","revision":"1033_logging_completion a19c41d240636b3e9a53191e739fe5b8082eb6ff"}
-{"level":"info","ts":1563385965.398029,"logger":"leader","msg":"Trying to become the leader."}
-{"level":"debug","ts":1563385965.3981338,"logger":"k8sutil","msg":"Found namespace","Namespace":"default"}
-{"level":"debug","ts":1563385965.4258604,"logger":"k8sutil","msg":"Found podname","Pod.Name":"couchbase-operator-5d74986457-hhrmr"}
-{"level":"debug","ts":1563385965.4330006,"logger":"k8sutil","msg":"Found Pod","Pod.Namespace":"default","Pod.Name":"couchbase-operator-5d74986457-hhrmr"}
-{"level":"info","ts":1563385965.4349635,"logger":"leader","msg":"No pre-existing lock was found."}
-{"level":"info","ts":1563385965.4387527,"logger":"leader","msg":"Became the leader."}
-{"level":"debug","ts":1563385965.4388113,"logger":"main","msg":"Initializing resource manager."}
-{"level":"debug","ts":1563385965.4631324,"logger":"main","msg":"Initializing controller."}
-{"level":"info","ts":1563385965.4634757,"logger":"kubebuilder.controller","msg":"Starting EventSource","controller":"couchbase-controller","source":"kind source: /, Kind="}
-{"level":"debug","ts":1563385965.463675,"logger":"main","msg":"Starting resource manager."}
-{"level":"info","ts":1563385965.5650735,"logger":"kubebuilder.controller","msg":"Starting Controller","controller":"couchbase-controller"}
-{"level":"info","ts":1563385965.6663089,"logger":"kubebuilder.controller","msg":"Starting workers","controller":"couchbase-controller","worker count":1}
-{"level":"info","ts":1563385966.6317647,"logger":"cluster","msg":"Watching new cluster","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385966.6405673,"logger":"cluster","msg":"Janitor starting","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385966.6449234,"logger":"cluster","msg":"Couchbase client starting","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385966.8309393,"logger":"cluster","msg":"Cluster does not exist so the operator is attempting to create it","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385967.438349,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","image":"couchbase/server:enterprise-6.0.0"}
-{"level":"info","ts":1563385978.6468956,"logger":"cluster","msg":"Operator added member","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000"}
-{"level":"info","ts":1563385978.6526756,"logger":"cluster","msg":"Initial pod creating","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385979.7674131,"logger":"cluster","msg":"Running","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563385979.7713091,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385981.3046408,"logger":"cluster","msg":"Bucket created","cluster":"test-couchbase-cw2hg","name":"default"}
-{"level":"debug","ts":1563385981.8678017,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563385982.076402,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385985.2914612,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-cw2hg","balance":"balanced","rebalancing":false}
-{"level":"info","ts":1563385985.291661,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
-{"level":"info","ts":1563385985.441613,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385985.5213153,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563385987.3229616,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385987.5173452,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-cw2hg","diff":"  strings.Join({\n  \t... // 28 identical lines\n  \t\"  exposeAdminConsole: false\",\n  \t\"  exposedFeatureServiceType: NodePort\",\n+ \t\"paused: true\",\n  \t\"security:\",\n  \t\"  adminSecret: basic-test-secret\",\n  \t... // 12 identical lines\n  }, \"\\n\")\n"}
-{"level":"info","ts":1563385987.5173798,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385987.9359324,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563385991.912619,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386001.9195812,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386011.924856,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386021.9305,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386031.9391935,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386041.9441404,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386051.9486582,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386061.9540195,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386071.9597816,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386081.9754927,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386092.0276015,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386092.8826234,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-cw2hg","diff":"  strings.Join({\n  \t... // 28 identical lines\n  \t\"  exposeAdminConsole: false\",\n  \t\"  exposedFeatureServiceType: NodePort\",\n- \t\"paused: true\",\n  \t\"security:\",\n  \t\"  adminSecret: basic-test-secret\",\n  \t... // 12 identical lines\n  }, \"\\n\")\n"}
-{"level":"debug","ts":1563386092.957637,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"info","ts":1563386093.3181148,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-cw2hg","balance":"balanced","rebalancing":false}
-{"level":"info","ts":1563386093.318195,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
-{"level":"info","ts":1563386093.3182023,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-hrisovalantis.test-couchbase-cw2hg.default.svc:8091","version":"unknown","class":"unknown","managed":false,"status":"active"}
-{"level":"info","ts":1563386098.6438653,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":0}
-{"level":"info","ts":1563386102.6909075,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":1.627604166666666}
-{"level":"info","ts":1563386106.7240262,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":5.533854166666666}
-{"level":"info","ts":1563386110.7348666,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":9.244791666666666}
-{"level":"info","ts":1563386114.7435322,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":12.6953125}
-{"level":"info","ts":1563386118.749344,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":16.40625}
-{"level":"info","ts":1563386122.7740276,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":19.17317708333334}
-{"level":"info","ts":1563386126.7824473,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":23.47005208333334}
-{"level":"info","ts":1563386130.8474095,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":25.78125}
-{"level":"info","ts":1563386134.852384,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":29.23177083333334}
-{"level":"info","ts":1563386138.8582299,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":33.65885416666666}
-{"level":"info","ts":1563386142.8654456,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":37.109375}
-{"level":"info","ts":1563386146.8790734,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":41.34114583333333}
-{"level":"info","ts":1563386150.8951237,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":45.60546875}
-{"level":"info","ts":1563386154.9126966,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":49.93489583333334}
-{"level":"info","ts":1563386158.9160159,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":50}
-{"level":"info","ts":1563386162.9365964,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":50}
-{"level":"info","ts":1563386166.9384656,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
-{"level":"info","ts":1563386170.940881,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
-{"level":"info","ts":1563386174.9433131,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
-{"level":"info","ts":1563386178.9450743,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
-{"level":"info","ts":1563386182.9485133,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
-{"level":"info","ts":1563386187.261648,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-hrisovalantis"}
-{"level":"info","ts":1563386187.4111855,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386187.8495033,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386188.098871,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386190.1792881,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386198.1573942,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386199.207519,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386209.2525616,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386210.383575,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386220.4355192,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386221.49158,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386231.5693843,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386232.6530027,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386242.7052526,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386243.7187734,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386253.1503015,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-cw2hg"}
-{"level":"debug","ts":1563386253.749672,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-cw2hg"}
+{"level":"info","ts":1563525218.2297564,"logger":"main","msg":"couchbase-operator","version":"2.0.0","revision":"k8s_1030_happiness_incarnate da4cedc37542e8b08359d22cd207848b4296a5ed"}
+{"level":"info","ts":1563525218.2300048,"logger":"leader","msg":"Trying to become the leader."}
+{"level":"debug","ts":1563525218.2300813,"logger":"k8sutil","msg":"Found namespace","Namespace":"default"}
+{"level":"debug","ts":1563525218.3158436,"logger":"k8sutil","msg":"Found podname","Pod.Name":"couchbase-operator-68b7fb4bbb-r6gxt"}
+{"level":"debug","ts":1563525218.3277774,"logger":"k8sutil","msg":"Found Pod","Pod.Namespace":"default","Pod.Name":"couchbase-operator-68b7fb4bbb-r6gxt"}
+{"level":"info","ts":1563525218.3318257,"logger":"leader","msg":"No pre-existing lock was found."}
+{"level":"info","ts":1563525218.3402507,"logger":"leader","msg":"Became the leader."}
+{"level":"debug","ts":1563525218.340288,"logger":"main","msg":"Initializing resource manager."}
+{"level":"debug","ts":1563525218.407859,"logger":"main","msg":"Initializing controller."}
+{"level":"info","ts":1563525218.4080615,"logger":"kubebuilder.controller","msg":"Starting EventSource","controller":"couchbase-controller","source":"kind source: /, Kind="}
+{"level":"debug","ts":1563525218.4082332,"logger":"main","msg":"Starting resource manager."}
+{"level":"info","ts":1563525218.508634,"logger":"kubebuilder.controller","msg":"Starting Controller","controller":"couchbase-controller"}
+{"level":"info","ts":1563525218.608897,"logger":"kubebuilder.controller","msg":"Starting workers","controller":"couchbase-controller","worker count":1}
+{"level":"info","ts":1563525258.259003,"logger":"cluster","msg":"Watching new cluster","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525258.2689724,"logger":"cluster","msg":"Janitor starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525258.2787175,"logger":"cluster","msg":"Couchbase client starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525258.4336572,"logger":"cluster","msg":"Cluster does not exist so the operator is attempting to create it","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525259.0374038,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525276.8175027,"logger":"cluster","msg":"Operator added member","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525276.827264,"logger":"cluster","msg":"Initial pod creating","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525277.9794579,"logger":"cluster","msg":"Running","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525277.9837892,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525278.975894,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525278.975938,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525283.0452614,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525305.5338757,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525305.617303,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525326.0829957,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002"}
+{"level":"info","ts":1563525326.152325,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525348.7006798,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003"}
+{"level":"info","ts":1563525348.7556956,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525371.598592,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004"}
+{"level":"info","ts":1563525372.1223135,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-d25r7","progress":0}
+{"level":"info","ts":1563525376.1259463,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-d25r7","progress":50}
+{"level":"info","ts":1563525382.2911148,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525383.498146,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525383.5475998,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525385.9593194,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525393.5548327,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525394.004365,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525394.0044398,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525394.0044606,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525394.004468,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525394.004474,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525394.0044782,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525394.0044823,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525395.0063899,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525395.00643,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525395.006437,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525395.006441,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"debug","ts":1563525395.006447,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"error","ts":1563525395.0064516,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-d25r7","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525395.0504248,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525396.759429,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525396.759565,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525396.7595901,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525396.7596295,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525396.759638,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525396.7596447,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525396.7596562,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525397.2155795,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525397.21573,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525397.2157454,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525397.2157521,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"debug","ts":1563525397.2157652,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"error","ts":1563525397.2157986,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-d25r7","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525405.059635,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525410.2688708,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525410.3134463,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563525410.3135056,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525410.313514,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525410.3135197,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525410.313543,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525410.3135478,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525410.9571004,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525410.95714,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525410.9571462,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525410.9571507,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"debug","ts":1563525410.957158,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"error","ts":1563525410.9571638,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-d25r7","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525411.3559632,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525412.217482,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525412.3617735,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563525412.3618307,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525412.361841,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525412.361848,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525412.3618536,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525412.361859,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525414.353833,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525414.3538773,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"debug","ts":1563525414.3538876,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"error","ts":1563525414.3538933,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-d25r7","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525414.7477622,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525415.4085393,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525415.7426648,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-d25r7","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563525415.7427251,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525415.742735,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525415.742742,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525415.7427487,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525415.7427564,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525418.9503205,"logger":"cluster","msg":"Pods failed over","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525418.9503584,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525418.9503694,"logger":"cluster","msg":"Pod failed, deleting","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525418.9503746,"logger":"cluster","msg":"Pods failed over","cluster":"test-couchbase-d25r7"}
+{"level":"info","ts":1563525418.9503784,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525418.950383,"logger":"cluster","msg":"Pod failed, deleting","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525420.9544334,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0005","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525442.8120291,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0005"}
+{"level":"info","ts":1563525442.8640547,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0006","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525466.1662316,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0006"}
+{"level":"info","ts":1563525466.3332064,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525467.1422448,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-d25r7","progress":0}
+{"level":"info","ts":1563525473.1102448,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0000"}
+{"level":"info","ts":1563525473.2300842,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-d25r7","name":"test-couchbase-d25r7-0001"}
+{"level":"info","ts":1563525473.8425627,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525475.9142926,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525475.9676023,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-d25r7"}
+{"level":"debug","ts":1563525478.4508953,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-d25r7"}
+{"level":"error","ts":1563525478.4550984,"logger":"cluster","msg":"Status update failed","cluster":"test-couchbase-d25r7","error":"couchbaseclusters.couchbase.com \"test-couchbase-d25r7\" not found","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:331\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:388\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525478.455252,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-d25r7"}
+{"level":"debug","ts":1563525485.9604201,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-d25r7"}
+{"level":"info","ts":1563525514.0406337,"logger":"cluster","msg":"Watching new cluster","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525514.0449808,"logger":"cluster","msg":"Janitor starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525514.0518546,"logger":"cluster","msg":"Couchbase client starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525514.2167497,"logger":"cluster","msg":"Cluster does not exist so the operator is attempting to create it","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525514.8194509,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525532.4776177,"logger":"cluster","msg":"Operator added member","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525532.4835436,"logger":"cluster","msg":"Initial pod creating","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525533.6613443,"logger":"cluster","msg":"Running","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525533.668228,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525534.849243,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525534.84929,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525534.8493044,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525538.7281132,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525560.7861104,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001"}
+{"level":"info","ts":1563525560.8734798,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525583.8653436,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002"}
+{"level":"info","ts":1563525583.9874449,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525606.7136889,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525606.7721307,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525628.0861206,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004"}
+{"level":"info","ts":1563525628.143485,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525649.4772599,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005"}
+{"level":"info","ts":1563525649.5593026,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525671.3262007,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006"}
+{"level":"info","ts":1563525671.3938851,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525692.1456685,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007"}
+{"level":"info","ts":1563525692.2238297,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525714.2963421,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008"}
+{"level":"info","ts":1563525715.0939722,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":0}
+{"level":"info","ts":1563525719.097177,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":50}
+{"level":"info","ts":1563525727.2507472,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525727.7561054,"logger":"cluster","msg":"Bucket created","cluster":"test-couchbase-j9vbw","name":"default"}
+{"level":"debug","ts":1563525729.3372176,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525729.386507,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525733.599744,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563525733.6000783,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.600697,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6007202,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6007383,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6017926,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6018512,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6018667,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.601874,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6018815,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525733.6018991,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525733.601932,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525733.601944,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525733.6019516,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525733.6019628,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525733.601969,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525733.601979,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525733.6019852,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525733.6019957,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525733.7553988,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525733.8461046,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525736.3039706,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525736.3684068,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525740.1330526,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525740.1331193,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.133131,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.1331372,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525740.1331437,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.1331494,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525740.1331558,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.1331623,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.1331675,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525740.133173,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563525740.1331882,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525740.1331956,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525740.1332016,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","class":"test_config_1","group":"us-east1-b"}
+{"level":"info","ts":1563525740.1332092,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525740.1332157,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525740.1332219,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525740.133233,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525740.1332386,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525740.1332457,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525740.2343693,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525740.2958302,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525742.3327405,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525742.5361528,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525748.7320487,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525748.9414878,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525755.132251,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"error","ts":1563525755.1323674,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-j9vbw","error":"pods \"test-couchbase-j9vbw-0000\" not found","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525755.335693,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525766.4868114,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525766.521158,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525766.5212195,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525766.5212293,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.5212357,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.5212421,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525766.5212486,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.5212545,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.5212605,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525766.5212667,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.5212743,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525766.521289,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525766.5212991,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525766.5213046,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525766.5213263,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525766.5213318,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525766.5213482,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525768.0075738,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525768.0076663,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525768.0076735,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525768.0076783,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525768.0121703,"logger":"cluster","msg":"Recently created pod down, waiting","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525768.012403,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"error","ts":1563525768.0125296,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-j9vbw","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525768.0626876,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525774.685484,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525774.7285955,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525774.7286582,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525774.728666,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.7286708,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.7286766,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525774.7286828,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.728687,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.7287066,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"down"}
+{"level":"info","ts":1563525774.7287118,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.7287164,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525774.7287273,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525774.728732,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525774.728736,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525774.728743,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525774.728747,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525774.7287502,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525775.0997293,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525775.099779,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525775.099788,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525775.0997927,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525775.099797,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525775.0998008,"logger":"cluster","msg":"Pod down, waiting for auto-failover","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006"}
+{"level":"debug","ts":1563525775.0998068,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"error","ts":1563525775.0998116,"logger":"cluster","msg":"Reconciliation failed","cluster":"test-couchbase-j9vbw","error":"unable to reconcile cluster because some nodes are down","stacktrace":"github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr.(*zapLogger).Error\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/github.com/go-logr/zapr/zapr.go:128\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).runReconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:381\ngithub.com/couchbase/couchbase-operator/pkg/cluster.(*Cluster).Update\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/cluster/cluster.go:398\ngithub.com/couchbase/couchbase-operator/pkg/controller.(*CouchbaseClusterReconciler).Reconcile\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/pkg/controller/controller.go:86\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).processNextWorkItem\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:215\ngithub.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller.(*Controller).Start.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/sigs.k8s.io/controller-runtime/pkg/internal/controller/controller.go:158\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil.func1\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:133\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.JitterUntil\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:134\ngithub.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait.Until\n\t/home/simon/go/src/github.com/couchbase/couchbase-operator/vendor/k8s.io/apimachinery/pkg/util/wait/wait.go:88"}
+{"level":"debug","ts":1563525778.0642672,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525778.4713113,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525780.3072295,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-j9vbw","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563525780.3072836,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525780.3072944,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.3073013,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.3073072,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525780.3073127,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.3073184,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.3073254,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"failed"}
+{"level":"info","ts":1563525780.3073316,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.3073387,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525780.307356,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0001","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525780.3073707,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0004","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525780.3073769,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0007","class":"test_config_1","group":"us-east1-c"}
+{"level":"info","ts":1563525780.3073862,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0002","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525780.307392,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0005","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525780.3073993,"logger":"scheduler","msg":"Scheduler status","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0008","class":"test_config_1","group":"us-east1-d"}
+{"level":"info","ts":1563525781.9068806,"logger":"cluster","msg":"Pods failed over","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525781.9069226,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525781.906934,"logger":"cluster","msg":"Pod failed, deleting","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525781.9069397,"logger":"cluster","msg":"Pods failed over","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525781.9069436,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525781.9069479,"logger":"cluster","msg":"Pod failed, deleting","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525781.9069512,"logger":"cluster","msg":"Pods failed over","cluster":"test-couchbase-j9vbw"}
+{"level":"info","ts":1563525781.9069555,"logger":"cluster","msg":"Pod unrecoverable","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006","reason":"No volume mounts defined"}
+{"level":"info","ts":1563525781.9069595,"logger":"cluster","msg":"Pod failed, deleting","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006"}
+{"level":"info","ts":1563525783.9671948,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0009","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525807.7443054,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0009"}
+{"level":"info","ts":1563525807.805613,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0010","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525831.0675623,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0010"}
+{"level":"info","ts":1563525831.137361,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0011","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525853.5130606,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0011"}
+{"level":"info","ts":1563525854.4064808,"logger":"cluster","msg":"External address collection failed","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525854.6138802,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":0}
+{"level":"info","ts":1563525858.6195817,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":0}
+{"level":"info","ts":1563525862.6332424,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":3.847105231024426}
+{"level":"info","ts":1563525866.6508214,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":14.39244572572427}
+{"level":"info","ts":1563525870.6608617,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":25.09631415574044}
+{"level":"info","ts":1563525874.685571,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":35.80319129325039}
+{"level":"info","ts":1563525878.7053173,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-j9vbw","progress":46.36434991115942}
+{"level":"info","ts":1563525886.1129766,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0000"}
+{"level":"info","ts":1563525886.2663603,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0006"}
+{"level":"info","ts":1563525886.4553447,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-j9vbw","name":"test-couchbase-j9vbw-0003"}
+{"level":"info","ts":1563525887.650122,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525890.284638,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525890.3380346,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525895.617093,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525898.9000921,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-j9vbw"}
+{"level":"debug","ts":1563525900.3314052,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-j9vbw"}
+{"level":"info","ts":1563525909.1733925,"logger":"cluster","msg":"Watching new cluster","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525909.178921,"logger":"cluster","msg":"Janitor starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525909.1907823,"logger":"cluster","msg":"Couchbase client starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525909.3510842,"logger":"cluster","msg":"Cluster does not exist so the operator is attempting to create it","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525909.953634,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563525985.5334523,"logger":"cluster","msg":"Operator added member","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000"}
+{"level":"info","ts":1563525985.5402637,"logger":"cluster","msg":"Initial pod creating","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525986.392873,"logger":"cluster","msg":"Running","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563525986.397614,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563525987.3968554,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563525987.3969066,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563525991.4712894,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526071.1078284,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001"}
+{"level":"info","ts":1563526071.1718743,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526151.6558447,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002"}
+{"level":"info","ts":1563526152.0881755,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526156.091752,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526163.3316731,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526163.7421932,"logger":"cluster","msg":"Bucket created","cluster":"test-couchbase-dgrgx","name":"default"}
+{"level":"debug","ts":1563526164.923345,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526165.127896,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526168.4111547,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"unbalanced","rebalancing":false}
+{"level":"info","ts":1563526168.4112625,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563526168.411273,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563526168.4112797,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563526168.523839,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526168.5808454,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526171.323824,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526171.5261066,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526173.735855,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563526173.735912,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563526173.7359223,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526173.7359293,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526173.8596897,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526173.9169512,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526176.5245454,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526176.7259042,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526181.7252612,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526181.7814763,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-dgrgx","diff":"  strings.Join({\n  \t... // 44 identical lines\n  \t\"  - query\",\n  \t\"  - index\",\n- \t\"  size: 3\",\n+ \t\"  size: 2\",\n  \t\"softwareUpdateNotifications: false\",\n  \t\"volumeClaimTemplates:\",\n  \t... // 14 identical lines\n  }, \"\\n\")\n"}
+{"level":"debug","ts":1563526181.926855,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526184.132595,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563526184.1326501,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526184.132661,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526184.1326685,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526188.9975593,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526193.0026927,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526197.0198958,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":5.332870284083008}
+{"level":"info","ts":1563526201.0295389,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":13.27521770830701}
+{"level":"info","ts":1563526205.0416374,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":21.16760261331045}
+{"level":"info","ts":1563526209.0602536,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":29.36403568645018}
+{"level":"info","ts":1563526213.067134,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":37.53042252978398}
+{"level":"info","ts":1563526217.072504,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":44.72802516351803}
+{"level":"info","ts":1563526221.0776255,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526225.0829353,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526229.0886166,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526233.092134,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526237.0954242,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526241.0988896,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526245.1021798,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526249.1051304,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526254.2040935,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0002"}
+{"level":"info","ts":1563526254.4148712,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526255.8214805,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526255.8812618,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526259.8163798,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526260.0173266,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526264.215137,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526264.261839,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-dgrgx","diff":"  strings.Join({\n  \t... // 44 identical lines\n  \t\"  - query\",\n  \t\"  - index\",\n- \t\"  size: 2\",\n+ \t\"  size: 5\",\n  \t\"softwareUpdateNotifications: false\",\n  \t\"volumeClaimTemplates:\",\n  \t... // 14 identical lines\n  }, \"\\n\")\n"}
+{"level":"debug","ts":1563526264.4171476,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526266.6225572,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563526266.6226027,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526266.6226106,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526269.9250405,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0003","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526349.7369626,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0003"}
+{"level":"info","ts":1563526349.8033555,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0004","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526428.2464786,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0004"}
+{"level":"info","ts":1563526428.3484983,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0005","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526510.440195,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0005"}
+{"level":"info","ts":1563526511.0876563,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526515.09207,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526519.1269891,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":2.476179041879023}
+{"level":"info","ts":1563526523.1492224,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":10.30969246561774}
+{"level":"info","ts":1563526527.175254,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":16.84766652859735}
+{"level":"info","ts":1563526531.1933148,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":22.6447036412279}
+{"level":"info","ts":1563526535.2112772,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":28.33806070647465}
+{"level":"info","ts":1563526539.2336695,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":34.63309081158742}
+{"level":"info","ts":1563526543.2548435,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":41.10167404036826}
+{"level":"info","ts":1563526547.26978,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":45.87168758716876}
+{"level":"info","ts":1563526551.2907474,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":48.94002789400279}
+{"level":"info","ts":1563526555.4992595,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526558.3497195,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526558.5538294,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526565.1538246,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526568.2912965,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-dgrgx","diff":"  strings.Join({\n  \t... // 44 identical lines\n  \t\"  - query\",\n  \t\"  - index\",\n- \t\"  size: 5\",\n+ \t\"  size: 1\",\n  \t\"softwareUpdateNotifications: false\",\n  \t\"volumeClaimTemplates:\",\n  \t... // 14 identical lines\n  }, \"\\n\")\n"}
+{"level":"debug","ts":1563526568.3962252,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526568.7067196,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563526568.7068572,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526568.7068765,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526568.706883,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0003","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526568.7068906,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0004","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526568.7069223,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0005","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526573.889076,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526577.8931122,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526581.909108,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":3.587456451552023}
+{"level":"info","ts":1563526585.9293694,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":9.167970833970532}
+{"level":"info","ts":1563526589.9552972,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":15.20860509160302}
+{"level":"info","ts":1563526593.971331,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":21.4757124862686}
+{"level":"info","ts":1563526597.9933393,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":27.45799483936542}
+{"level":"info","ts":1563526602.010279,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":33.95396657144669}
+{"level":"info","ts":1563526606.0244334,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":40.50494252752799}
+{"level":"info","ts":1563526610.0363002,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":47.05451586655817}
+{"level":"info","ts":1563526614.0506597,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":49.65825874694873}
+{"level":"info","ts":1563526618.0576358,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526622.0625947,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526626.0668993,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526630.0710943,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526634.0757241,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526638.0803194,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526642.084758,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":100}
+{"level":"info","ts":1563526650.2372189,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0004"}
+{"level":"info","ts":1563526650.47611,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0005"}
+{"level":"info","ts":1563526651.2089038,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0001"}
+{"level":"info","ts":1563526652.2104254,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0003"}
+{"level":"info","ts":1563526652.4942658,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526654.0361404,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526654.2703142,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526657.0063188,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526662.109823,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-dgrgx","diff":"  strings.Join({\n  \t... // 44 identical lines\n  \t\"  - query\",\n  \t\"  - index\",\n- \t\"  size: 1\",\n+ \t\"  size: 3\",\n  \t\"softwareUpdateNotifications: false\",\n  \t\"volumeClaimTemplates:\",\n  \t... // 14 identical lines\n  }, \"\\n\")\n"}
+{"level":"debug","ts":1563526662.1142054,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"info","ts":1563526662.5167081,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-dgrgx","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563526662.5168197,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563526665.9674666,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0006","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526746.8282094,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0006"}
+{"level":"info","ts":1563526746.892739,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0007","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563526827.095868,"logger":"cluster","msg":"Pod added to cluster","cluster":"test-couchbase-dgrgx","name":"test-couchbase-dgrgx-0007"}
+{"level":"info","ts":1563526828.087484,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526832.0910592,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":0}
+{"level":"info","ts":1563526836.1007493,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":2.320923302834225}
+{"level":"info","ts":1563526840.1137347,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":8.856154708183235}
+{"level":"info","ts":1563526844.1299922,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":15.20815532646638}
+{"level":"info","ts":1563526848.1397226,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":21.68230980279344}
+{"level":"info","ts":1563526852.1522737,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":28.03431042107659}
+{"level":"info","ts":1563526856.1634152,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":34.32523411033778}
+{"level":"info","ts":1563526860.181407,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":40.56721038372198}
+{"level":"info","ts":1563526864.1897402,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":44.21669106881406}
+{"level":"info","ts":1563526868.1982558,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":47.24255734504637}
+{"level":"info","ts":1563526872.2009377,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-dgrgx","progress":50}
+{"level":"info","ts":1563526877.3986013,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526878.6318188,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526878.833273,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526883.831669,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526884.033613,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526889.030907,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526889.2356672,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526894.230582,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526897.4962964,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-dgrgx"}
+{"level":"debug","ts":1563526899.0992024,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-dgrgx"}

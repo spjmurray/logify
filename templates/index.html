@@ -4,11 +4,6 @@
   <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
 <body>
-  <h1>Quick Links</h1>
-  {% for table in tables %}
-    <a href="#{{ table.title }}">{{ table.title }}</a>
-  {% endfor %}
-  <h1>Logs</h1>
   {% for table in tables %}
   <h2>{{ table.title }}</h2>
   <a name="{{ table.title }}"></a>
@@ -17,7 +12,7 @@
       <th class="level">Level</th>
       <th class="timestamp">Timestamp</th>
       <th class="message">Message</th>
-      <th class="tags">Tags</th></tr>
+      <th class="labels">Tags</th></tr>
     </tr>
     {% for row in table.rows %}
     <tr>
@@ -27,7 +22,7 @@
       <td>
         <div class="scrollable">
           <dl>
-          {% for key, value in row.tags|dictsort %}
+          {% for key, value in row.labels|dictsort %}
             <dt>{{ key }}</dt>
             <dd>{{ value }}</dd>
           {% endfor %}

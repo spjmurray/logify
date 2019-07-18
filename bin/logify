@@ -39,15 +39,15 @@ def main(args):
             u'level': entry['level'],
             u'timestamp': time.ctime(entry['ts']),
             u'message': entry['msg'],
-            u'tags': labels,
+            u'labels': labels,
         }
 
     log = [convert(x) for x in log]
 
     # Group our log entries by cluster
     def key(entry):
-        if u'cluster' in entry[u'tags']:
-            return entry[u'tags'][u'cluster']
+        if u'cluster' in entry[u'labels']:
+            return entry[u'labels'][u'cluster']
         return u'global'
 
     tables = [{u'title': k, u'rows': list(v)} for k, v in itertools.groupby(sorted(log, key=key), key)]
