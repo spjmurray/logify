@@ -1,66 +1,63 @@
 #!/usr/bin/env python
 
 import collections
+import itertools
+import jinja2
 import json
 import locale
+import sys
 import re
 import time
 
-def print_table(title, lines):
-    print '<h1>{}</h1>'.format(title)
-    print '<table>'
-    print '<tr><th class="level">Level</th><th class="time">Timestamp</th><th class="message">Message</th><th class="tags">Tags</th></tr>'
-    for line in lines:
-        level = line['level']
-        ts = time.ctime(line['ts'])
-        message = line['msg']
-        del line['level']
-        del line['ts']
-        del line['msg']
-        try:
-            del line['cluster']
-        except KeyError:
-            pass
+# These are the keys that are required/expected by each log entry.
+REQUIRED_KEYS = [
+    u'level',
+    u'ts',
+    u'msg',
+]
 
-        keys = sorted(line.keys(), cmp=locale.strcoll)
+def main(args):
+    # Read in the file, discarding whitespace and splitting into lines.
+    with open(args[0]) as filedesc:
+        log = filedesc.read().strip().split('\n')
 
-        def asciify(x):
-            if isinstance(x, basestring):
-                return re.sub("\n", "<br />", x.encode('utf-8'))
-            return x
+    # Parse each line into raw JSON
+    log = [json.loads(x) for x in log]
 
-        tags = "".join('<dl><dt>{}</dt><dd>{}</dd></dl>'.format(k, asciify(line[k])) for k in keys)
-        try:
-            print '<tr><td class="{0}">{0}</td><td>{1}</td><td>{2}</td><td><div class="scrollable">{3}</div></td></tr>'.format(level, ts, message, tags)
-        except KeyError:
-            pass
-    print '</table>'
+    # Convert takes a rwa object and converts it into our internal representation.
+    def convert(entry):
+        # Convert white space to something HTML can render.
+        def htmlify(value):
+            if isinstance(value, basestring):
+                return re.sub(ur'\n', ur'<br />', value)
+            return value
 
-with open('log') as filedesc:
-    log = filedesc.read().strip().split('\n')
+        # Extract custom labels, doing any conversion on the way.
+        labels = {k: htmlify(entry[k]) for k in entry if k not in REQUIRED_KEYS}
 
-output = []
-for line in log:
-    output.append(json.loads(line))
+        return {
+            u'level': entry['level'],
+            u'timestamp': time.ctime(entry['ts']),
+            u'message': entry['msg'],
+            u'tags': labels,
+        }
 
-operator_output = []
-cluster_output = collections.defaultdict(list)
-for o in output:
-    try:
-        cluster_output[o['cluster']].append(o)
-    except KeyError:
-        operator_output.append(o)
+    log = [convert(x) for x in log]
 
-print '<html lang="en">'
-print '<meta charset=utf-8>'
-print '<head>'
-print '<link rel="stylesheet" type="text/css" href="default.css">'
-print '</head>'
-print '<body>'
-print_table('couchbase-operator', operator_output)
-for cluster, lines in cluster_output.iteritems():
-    print_table(cluster, lines)
-print '</body>'
-print '</html>'
+    # Group our log entries by cluster
+    def key(entry):
+        if u'cluster' in entry[u'tags']:
+            return entry[u'tags'][u'cluster']
+        return u'global'
+
+    tables = [{u'title': k, u'rows': list(v)} for k, v in itertools.groupby(sorted(log, key=key), key)]
+
+    with open('templates/index.html') as tmpl:
+        template = jinja2.Template(tmpl.read())
+    print template.render(tables=tables).encode('utf-8')
+
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
 
 # vi: ts=4 et:

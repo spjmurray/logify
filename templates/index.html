@@ -1,0 +1,36 @@
+<html lang="en">
+<meta charset=utf-8>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+</head>
+<body>
+{% for table in tables %}
+  <h1>{{ table.title }}</h1>
+  <table>
+    <tr>
+      <th class="level">Level</th>
+      <th class="timestamp">Timestamp</th>
+      <th class="message">Message</th>
+      <th class="tags">Tags</th></tr>
+    </tr>
+    {% for row in table.rows %}
+    <tr>
+      <td class="{{row.level}}">{{ row.level }}</td>
+      <td>{{ row.timestamp }}</td>
+      <td>{{ row.message}}</td>
+      <td>
+        <div class="scrollable">
+          <dl>
+          {% for key, value in row.tags|dictsort %}
+            <dt>{{ key }}</dt>
+            <dd>{{ value }}</dd>
+          {% endfor %}
+          </dl>
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endfor %}
+</body>
+</html>
