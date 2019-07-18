@@ -4,8 +4,14 @@
   <link rel="stylesheet" type="text/css" href="css/default.css">
 </head>
 <body>
-{% for table in tables %}
-  <h1>{{ table.title }}</h1>
+  <h1>Quick Links</h1>
+  {% for table in tables %}
+    <a href="#{{ table.title }}">{{ table.title }}</a>
+  {% endfor %}
+  <h1>Logs</h1>
+  {% for table in tables %}
+  <h2>{{ table.title }}</h2>
+  <a name="{{ table.title }}"></a>
   <table>
     <tr>
       <th class="level">Level</th>
@@ -31,6 +37,6 @@
     </tr>
     {% endfor %}
   </table>
-{% endfor %}
+  {% endfor %}
 </body>
 </html>
