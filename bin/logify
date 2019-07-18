@@ -1,0 +1,66 @@
+#!/usr/bin/env python
+
+import collections
+import json
+import locale
+import re
+import time
+
+def print_table(title, lines):
+    print '<h1>{}</h1>'.format(title)
+    print '<table>'
+    print '<tr><th class="level">Level</th><th class="time">Timestamp</th><th class="message">Message</th><th class="tags">Tags</th></tr>'
+    for line in lines:
+        level = line['level']
+        ts = time.ctime(line['ts'])
+        message = line['msg']
+        del line['level']
+        del line['ts']
+        del line['msg']
+        try:
+            del line['cluster']
+        except KeyError:
+            pass
+
+        keys = sorted(line.keys(), cmp=locale.strcoll)
+
+        def asciify(x):
+            if isinstance(x, basestring):
+                return re.sub("\n", "<br />", x.encode('utf-8'))
+            return x
+
+        tags = "".join('<dl><dt>{}</dt><dd>{}</dd></dl>'.format(k, asciify(line[k])) for k in keys)
+        try:
+            print '<tr><td class="{0}">{0}</td><td>{1}</td><td>{2}</td><td><div class="scrollable">{3}</div></td></tr>'.format(level, ts, message, tags)
+        except KeyError:
+            pass
+    print '</table>'
+
+with open('log') as filedesc:
+    log = filedesc.read().strip().split('\n')
+
+output = []
+for line in log:
+    output.append(json.loads(line))
+
+operator_output = []
+cluster_output = collections.defaultdict(list)
+for o in output:
+    try:
+        cluster_output[o['cluster']].append(o)
+    except KeyError:
+        operator_output.append(o)
+
+print '<html lang="en">'
+print '<meta charset=utf-8>'
+print '<head>'
+print '<link rel="stylesheet" type="text/css" href="default.css">'
+print '</head>'
+print '<body>'
+print_table('couchbase-operator', operator_output)
+for cluster, lines in cluster_output.iteritems():
+    print_table(cluster, lines)
+print '</body>'
+print '</html>'
+
+# vi: ts=4 et:

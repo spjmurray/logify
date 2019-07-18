@@ -1,0 +1,76 @@
+body {
+  margin: 10px 50px;
+  font-family: arial;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 9pt;
+}
+
+th, td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+th.level {
+  width: 5%;
+}
+
+th.time {
+  width: 12%;
+}
+
+th.message {
+  width: 18%;
+}
+
+th.tags {
+  width: 65%;
+}
+
+td.info {
+  background-color: #aaffaa;
+}
+
+td.warn {
+  background-color: #ffffaa;
+}
+
+td.error {
+  background-color: #ffaaaa;
+}
+
+.scrollable {
+  overflow: scroll;
+  overflow-y: hidden;
+  display: block;
+}
+
+dl {
+  margin: 0 0 2px 0;
+}
+
+dt {
+  font-weight: bold;
+  display: inline-block;
+  /*margin: 0 0 2px 0;*/
+}
+
+dd {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre;
+  margin: 0;
+}

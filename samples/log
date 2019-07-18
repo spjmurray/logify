@@ -1,0 +1,88 @@
+{"level":"info","ts":1563385965.3977811,"logger":"main","msg":"couchbase-operator","version":"2.0.0","revision":"1033_logging_completion a19c41d240636b3e9a53191e739fe5b8082eb6ff"}
+{"level":"info","ts":1563385965.398029,"logger":"leader","msg":"Trying to become the leader."}
+{"level":"debug","ts":1563385965.3981338,"logger":"k8sutil","msg":"Found namespace","Namespace":"default"}
+{"level":"debug","ts":1563385965.4258604,"logger":"k8sutil","msg":"Found podname","Pod.Name":"couchbase-operator-5d74986457-hhrmr"}
+{"level":"debug","ts":1563385965.4330006,"logger":"k8sutil","msg":"Found Pod","Pod.Namespace":"default","Pod.Name":"couchbase-operator-5d74986457-hhrmr"}
+{"level":"info","ts":1563385965.4349635,"logger":"leader","msg":"No pre-existing lock was found."}
+{"level":"info","ts":1563385965.4387527,"logger":"leader","msg":"Became the leader."}
+{"level":"debug","ts":1563385965.4388113,"logger":"main","msg":"Initializing resource manager."}
+{"level":"debug","ts":1563385965.4631324,"logger":"main","msg":"Initializing controller."}
+{"level":"info","ts":1563385965.4634757,"logger":"kubebuilder.controller","msg":"Starting EventSource","controller":"couchbase-controller","source":"kind source: /, Kind="}
+{"level":"debug","ts":1563385965.463675,"logger":"main","msg":"Starting resource manager."}
+{"level":"info","ts":1563385965.5650735,"logger":"kubebuilder.controller","msg":"Starting Controller","controller":"couchbase-controller"}
+{"level":"info","ts":1563385965.6663089,"logger":"kubebuilder.controller","msg":"Starting workers","controller":"couchbase-controller","worker count":1}
+{"level":"info","ts":1563385966.6317647,"logger":"cluster","msg":"Watching new cluster","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385966.6405673,"logger":"cluster","msg":"Janitor starting","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385966.6449234,"logger":"cluster","msg":"Couchbase client starting","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385966.8309393,"logger":"cluster","msg":"Cluster does not exist so the operator is attempting to create it","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385967.438349,"logger":"cluster","msg":"Creating pod","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","image":"couchbase/server:enterprise-6.0.0"}
+{"level":"info","ts":1563385978.6468956,"logger":"cluster","msg":"Operator added member","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000"}
+{"level":"info","ts":1563385978.6526756,"logger":"cluster","msg":"Initial pod creating","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385979.7674131,"logger":"cluster","msg":"Running","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563385979.7713091,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385981.3046408,"logger":"cluster","msg":"Bucket created","cluster":"test-couchbase-cw2hg","name":"default"}
+{"level":"debug","ts":1563385981.8678017,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563385982.076402,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385985.2914612,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-cw2hg","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563385985.291661,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"warmup"}
+{"level":"info","ts":1563385985.441613,"logger":"cluster","msg":"Pods warming up, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385985.5213153,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563385987.3229616,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385987.5173452,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-cw2hg","diff":"  strings.Join({\n  \t... // 28 identical lines\n  \t\"  exposeAdminConsole: false\",\n  \t\"  exposedFeatureServiceType: NodePort\",\n+ \t\"paused: true\",\n  \t\"security:\",\n  \t\"  adminSecret: basic-test-secret\",\n  \t... // 12 identical lines\n  }, \"\\n\")\n"}
+{"level":"info","ts":1563385987.5173798,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385987.9359324,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563385991.912619,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386001.9195812,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386011.924856,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386021.9305,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386031.9391935,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386041.9441404,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386051.9486582,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386061.9540195,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386071.9597816,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386081.9754927,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386092.0276015,"logger":"cluster","msg":"Operator paused, skipping","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386092.8826234,"logger":"cluster","msg":"Resource updated","cluster":"test-couchbase-cw2hg","diff":"  strings.Join({\n  \t... // 28 identical lines\n  \t\"  exposeAdminConsole: false\",\n  \t\"  exposedFeatureServiceType: NodePort\",\n- \t\"paused: true\",\n  \t\"security:\",\n  \t\"  adminSecret: basic-test-secret\",\n  \t... // 12 identical lines\n  }, \"\\n\")\n"}
+{"level":"debug","ts":1563386092.957637,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"info","ts":1563386093.3181148,"logger":"couchbaseutil","msg":"Cluster status","cluster":"test-couchbase-cw2hg","balance":"balanced","rebalancing":false}
+{"level":"info","ts":1563386093.318195,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-0000","version":"enterprise-6.0.0","class":"test_config_1","managed":true,"status":"active"}
+{"level":"info","ts":1563386093.3182023,"logger":"couchbaseutil","msg":"Node status","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-hrisovalantis.test-couchbase-cw2hg.default.svc:8091","version":"unknown","class":"unknown","managed":false,"status":"active"}
+{"level":"info","ts":1563386098.6438653,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":0}
+{"level":"info","ts":1563386102.6909075,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":1.627604166666666}
+{"level":"info","ts":1563386106.7240262,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":5.533854166666666}
+{"level":"info","ts":1563386110.7348666,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":9.244791666666666}
+{"level":"info","ts":1563386114.7435322,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":12.6953125}
+{"level":"info","ts":1563386118.749344,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":16.40625}
+{"level":"info","ts":1563386122.7740276,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":19.17317708333334}
+{"level":"info","ts":1563386126.7824473,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":23.47005208333334}
+{"level":"info","ts":1563386130.8474095,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":25.78125}
+{"level":"info","ts":1563386134.852384,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":29.23177083333334}
+{"level":"info","ts":1563386138.8582299,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":33.65885416666666}
+{"level":"info","ts":1563386142.8654456,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":37.109375}
+{"level":"info","ts":1563386146.8790734,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":41.34114583333333}
+{"level":"info","ts":1563386150.8951237,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":45.60546875}
+{"level":"info","ts":1563386154.9126966,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":49.93489583333334}
+{"level":"info","ts":1563386158.9160159,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":50}
+{"level":"info","ts":1563386162.9365964,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":50}
+{"level":"info","ts":1563386166.9384656,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
+{"level":"info","ts":1563386170.940881,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
+{"level":"info","ts":1563386174.9433131,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
+{"level":"info","ts":1563386178.9450743,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
+{"level":"info","ts":1563386182.9485133,"logger":"couchbaseutil","msg":"Rebalancing","cluster":"test-couchbase-cw2hg","progress":100}
+{"level":"info","ts":1563386187.261648,"logger":"cluster","msg":"Pod deleted","cluster":"test-couchbase-cw2hg","name":"test-couchbase-cw2hg-hrisovalantis"}
+{"level":"info","ts":1563386187.4111855,"logger":"cluster","msg":"Reconcile completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386187.8495033,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386188.098871,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386190.1792881,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386198.1573942,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386199.207519,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386209.2525616,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386210.383575,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386220.4355192,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386221.49158,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386231.5693843,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386232.6530027,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386242.7052526,"logger":"cluster","msg":"Reconciliation starting","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386243.7187734,"logger":"cluster","msg":"Reconciliation completed","cluster":"test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386253.1503015,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-cw2hg"}
+{"level":"debug","ts":1563386253.749672,"logger":"kubebuilder.controller","msg":"Successfully Reconciled","controller":"couchbase-controller","request":"default/test-couchbase-cw2hg"}
