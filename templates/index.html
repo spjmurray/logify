@@ -1,37 +1,44 @@
-<html lang="en">
+<html lang="en" ng-app="logs">
 <meta charset=utf-8>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/default.css">
+  <style>
+    {{css}}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script>
+    angular.module('logs', [])
+    .controller('logscontroller', function() {
+      var vm = this;
+      vm.entries = {{ entries }};
+      vm.choices = [...new Set(vm.entries.map(x => x.labels.cluster).filter(x => x))];
+    });
+  </script>
 </head>
-<body>
-  {% for table in tables %}
-  <h2>{{ table.title }}</h2>
-  <a name="{{ table.title }}"></a>
+<body ng-controller="logscontroller as $ctrl">
+  <span>Filter:</span>
+  <select ng-model="$ctrl.choice" ng-options="x for x in $ctrl.choices"></select>
+  <br />
+  <br />
   <table>
     <tr>
       <th class="level">Level</th>
       <th class="timestamp">Timestamp</th>
       <th class="message">Message</th>
-      <th class="labels">Tags</th></tr>
+      <th class="labels">Tags</th>
     </tr>
-    {% for row in table.rows %}
-    <tr>
-      <td class="{{row.level}}">{{ row.level }}</td>
-      <td>{{ row.timestamp }}</td>
-      <td>{{ row.message}}</td>
+    <tr ng-repeat="entry in $ctrl.entries | filter:{'labels': {'cluster': $ctrl.choice}}">
+      <td ng-class="entry.level" ng-bind="entry.level"></td>
+      <td ng-bind="entry.timestamp"></td>
+      <td ng-bind="entry.message"></td>
       <td>
         <div class="scrollable">
-          <dl>
-          {% for key, value in row.labels|dictsort %}
-            <dt>{{ key }}</dt>
-            <dd>{{ value }}</dd>
-          {% endfor %}
+          <dl ng-repeat="(label, value) in entry.labels">
+            <dt ng-bind="label"></dt>
+            <dd ng-bind="value"></dd>
           </dl>
         </div>
-      </td>
+      </td>    
     </tr>
-    {% endfor %}
   </table>
-  {% endfor %}
 </body>
 </html>

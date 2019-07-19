@@ -1,13 +1,19 @@
 #!/usr/bin/env python
 
-import collections
-import itertools
-import jinja2
+"""
+logify - Simple parser for Couchbase Operator 2.0.0 JSON logs
+
+Parses and renders JSON logs in a human readable format.
+"""
+
 import json
-import locale
+import os
 import sys
-import re
+import tempfile
 import time
+import webbrowser
+
+import jinja2
 
 # These are the keys that are required/expected by each log entry.
 REQUIRED_KEYS = [
@@ -17,6 +23,10 @@ REQUIRED_KEYS = [
 ]
 
 def main(args):
+    """
+    Main entry point
+    """
+
     # Read in the file, discarding whitespace and splitting into lines.
     with open(args[0]) as filedesc:
         log = filedesc.read().strip().split('\n')
@@ -24,16 +34,13 @@ def main(args):
     # Parse each line into raw JSON
     log = [json.loads(x) for x in log]
 
-    # Convert takes a rwa object and converts it into our internal representation.
     def convert(entry):
-        # Convert white space to something HTML can render.
-        def htmlify(value):
-            if isinstance(value, basestring):
-                return re.sub(ur'\n', ur'<br />', value)
-            return value
+        """
+        Takes a raw object and converts it into our internal representation.
+        """
 
         # Extract custom labels, doing any conversion on the way.
-        labels = {k: htmlify(entry[k]) for k in entry if k not in REQUIRED_KEYS}
+        labels = {k: entry[k] for k in entry if k not in REQUIRED_KEYS}
 
         return {
             u'level': entry['level'],
@@ -44,17 +51,20 @@ def main(args):
 
     log = [convert(x) for x in log]
 
-    # Group our log entries by cluster
-    def key(entry):
-        if u'cluster' in entry[u'labels']:
-            return entry[u'labels'][u'cluster']
-        return u'global'
+    # Load up the resources to be rendered into a static HTML page.
+    base = os.path.dirname(os.path.realpath(__file__))
+    with open(base + '/../css/default.css') as tmp:
+        css = tmp.read()
+    with open(base + '/../templates/index.html') as tmp:
+        template = jinja2.Template(tmp.read())
 
-    tables = [{u'title': k, u'rows': list(v)} for k, v in itertools.groupby(sorted(log, key=key), key)]
+    # Create a temporary file and render the content out to it.
+    filedesc, path = tempfile.mkstemp()
+    os.write(filedesc, template.render(css=css, entries=json.dumps(log)).encode('utf-8'))
+    os.close(filedesc)
 
-    with open('templates/index.html') as tmpl:
-        template = jinja2.Template(tmpl.read())
-    print template.render(tables=tables).encode('utf-8')
+    # Finally... magic!
+    webbrowser.open_new_tab('file://' + path)
 
 
 if __name__ == '__main__':
