@@ -10,13 +10,48 @@
     .controller('logscontroller', function() {
       var vm = this;
       vm.entries = {{ entries }};
-      vm.choices = [...new Set(vm.entries.map(x => x.labels.cluster).filter(x => x))];
+      vm.clusters = ['', ...new Set(vm.entries.map(x => x.labels.cluster).filter(x => x))];
+      vm.cluster = ''
+      vm.levels = ['debug', 'info', 'error'];
+      vm.level = 'debug'
+      vm.filterEntries = filterEntries;
+
+      function filterEntries(obj) {
+        // When the cluster is set, discard any entries
+        // that do not belong to the cluster.
+        if (vm.cluster != '') {
+          if (!('labels' in obj)) {
+            return false
+          }
+          if (!('cluster' in obj.labels)) {
+            return false;
+          }
+          if (obj.labels.cluster != vm.cluster) {
+            return false;
+          }
+        }
+        // When the level is set, discard any enries above
+        // that threshold.
+        switch (vm.level) {
+        case 'info':
+          if (!['error', 'info'].includes(obj.level)) {
+            return false;
+          }
+          break;
+        case 'error':
+          if (obj.level != 'error') {
+            return false;
+          }
+          break;
+        }
+        return true;
+      }
     });
   </script>
 </head>
 <body ng-controller="logscontroller as $ctrl">
-  <span>Filter:</span>
-  <select ng-model="$ctrl.choice" ng-options="x for x in $ctrl.choices"></select>
+  Cluster: <select ng-model="$ctrl.cluster" ng-options="x for x in $ctrl.clusters"></select>
+  Level: <select ng-model="$ctrl.level" ng-options="x for x in $ctrl.levels"></select>
   <br />
   <br />
   <table>
@@ -26,7 +61,7 @@
       <th class="message">Message</th>
       <th class="labels">Tags</th>
     </tr>
-    <tr ng-repeat="entry in $ctrl.entries | filter:{'labels': {'cluster': $ctrl.choice}}">
+    <tr ng-repeat="entry in $ctrl.entries | filter:$ctrl.filterEntries">
       <td ng-class="entry.level" ng-bind="entry.level"></td>
       <td ng-bind="entry.timestamp"></td>
       <td ng-bind="entry.message"></td>
