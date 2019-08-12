@@ -32,7 +32,7 @@ def main(args):
         log = filedesc.read().strip().split('\n')
 
     # Parse each line into raw JSON
-    log = [json.loads(x) for x in log]
+    log = [json.loads(x) for x in log if x.startswith('{')]
 
     def convert(entry):
         """
