@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 """
 logify - Simple parser for Couchbase Operator 2.0.0 JSON logs
@@ -6,6 +6,7 @@ logify - Simple parser for Couchbase Operator 2.0.0 JSON logs
 Parses and renders JSON logs in a human readable format.
 """
 
+import argparse
 import json
 import os
 import sys
@@ -27,8 +28,12 @@ def main(args):
     Main entry point
     """
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('logfile')
+    args = parser.parse_args()
+
     # Read in the file, discarding whitespace and splitting into lines.
-    with open(args[0]) as filedesc:
+    with open(args.logfile) as filedesc:
         log = filedesc.read().strip().split('\n')
 
     # Parse each line into raw JSON
@@ -41,6 +46,14 @@ def main(args):
 
         # Extract custom labels, doing any conversion on the way.
         labels = {k: entry[k] for k in entry if k not in REQUIRED_KEYS}
+
+        # Convert from a cluster object to a string so it's easier to handle in angular.
+        if 'cluster' in labels and isinstance(labels['cluster'], dict):
+            labels['cluster'] = labels['cluster']['namespace'] + '/' + labels['cluster']['name']
+
+        # Bump up the level of entries with errors in them.
+        if 'error' in labels:
+            entry['level'] = 'error'
 
         return {
             u'level': entry['level'],
