@@ -9,10 +9,12 @@ Parses and renders JSON logs in a human readable format.
 import argparse
 import json
 import os
-import sys
+import os.path
+import stat
 import tempfile
 import time
 import webbrowser
+import yaml
 
 import jinja2
 
@@ -23,20 +25,58 @@ REQUIRED_KEYS = [
     u'msg',
 ]
 
-def main(args):
+def init(args):
     """
-    Main entry point
+    Init processes any arguments and returns any contextial
+    information about the logs.
     """
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument('logfile')
-    args = parser.parse_args()
+    # Default to old logs, where you refefence only the file (pre 2.2)
+    logs = args.logfile
+    metadata = None
+
+    # Get the metadata, extract the operator logs path.  Also load up
+    # any resources and add them to the metadata e.g. events and resources.
+    statistics = os.stat(args.logfile)
+    if stat.S_ISDIR(statistics.st_mode):
+        with open(args.logfile + '/metadata.json') as filedesc:
+            metadata = json.loads(filedesc.read())
+
+        operator_logs = metadata['operator']['logPath']
+        logs = os.path.join(os.path.split(args.logfile)[0], operator_logs)
+
+        for cluster in metadata['clusters']:
+            cluster_yaml = cluster['resourcePath']
+            with open(os.path.join(os.path.split(args.logfile)[0], cluster_yaml)) as filedesc:
+                cluster['resource'] = filedesc.read()
+
+            events_yaml = cluster['eventsPath']
+            with open(os.path.join(os.path.split(args.logfile)[0], events_yaml)) as filedesc:
+                events = yaml.load(filedesc.read(), Loader=yaml.SafeLoader)
+                events = sorted(events, key=lambda event: event['metadata']['creationTimestamp'])
+                cluster['events'] = events
+
+    return logs, metadata
+
+
+def process_logs(logs):
+    """
+    Take the raw logs and remove any non JSON, normalize fields and perform
+    any necessary post-processing.
+    """
 
     # Read in the file, discarding whitespace and splitting into lines.
-    with open(args.logfile) as filedesc:
+    with open(logs) as filedesc:
         log = filedesc.read().strip().split('\n')
 
     # Parse each line into raw JSON
+# Field/customers are stupid and hand us garbled nonsense all the time...
+#    log2 = []
+#    for x in log:
+#        if x.startswith('{'):
+#            print(x)
+#            log2.append(json.loads(x))
+
     log = [json.loads(x) for x in log if x.startswith('{')]
 
     def convert(entry):
@@ -62,18 +102,44 @@ def main(args):
             u'labels': labels,
         }
 
-    log = [convert(x) for x in log]
+    return [convert(x) for x in log]
+
+
+def main():
+    """
+    Main entry point
+    """
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('logfile')
+    args = parser.parse_args()
+
+    # This is the page rendering context, accumulate information as we go along.
+    context = {}
+
+    # Parse the arguments and get any common configuration.
+    logs, metadata = init(args)
+
+    if metadata:
+        context['metadata'] = metadata
+
+    # Load an process the main operator logs.
+    log = process_logs(logs)
+
+    context['entries'] = json.dumps(log)
 
     # Load up the resources to be rendered into a static HTML page.
     base = os.path.dirname(os.path.realpath(__file__))
     with open(base + '/../css/default.css') as tmp:
         css = tmp.read()
+        context['css'] = css
+
     with open(base + '/../templates/index.html') as tmp:
         template = jinja2.Template(tmp.read())
 
     # Create a temporary file and render the content out to it.
     filedesc, path = tempfile.mkstemp()
-    os.write(filedesc, template.render(css=css, entries=json.dumps(log)).encode('utf-8'))
+    os.write(filedesc, template.render(**context).encode('utf-8'))
     os.close(filedesc)
 
     # Finally... magic!
@@ -81,6 +147,6 @@ def main(args):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()
 
 # vi: ts=4 et:

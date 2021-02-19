@@ -1,6 +1,24 @@
 body {
-  margin: 10px 50px;
   font-family: arial;
+  margin: 0;
+  padding: 0;
+}
+#masthead {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  padding: 10px 10px 10px 50px;
+}
+#content {
+  margin: 10px 50px;
+}
+.logo {
+  height: 36px;
+  width: 36px;
+  background-color: white;
+  border-radius: 50%;
+  display: inline-block;
 }
 table {
   border-collapse: collapse;
@@ -51,6 +69,14 @@ dt {
   display: inline-block;
 }
 dd {
+  margin: 5px 0;
+}
+.pre {
   white-space: pre;
-  margin: 0;
+}
+h2 {
+  color: #4CAF50;
+}
+h3 {
+  color: #4CAF50;
 }

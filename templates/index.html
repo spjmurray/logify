@@ -1,38 +1,38 @@
-<html lang="en" ng-app="logs">
+<html lang="en" ng-app="logify">
 <meta charset=utf-8>
 <head>
   <style>
     {{css}}
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
   <script>
-    angular.module('logs', [])
-    .controller('logscontroller', function() {
-      var vm = this;
-      vm.entries = {{ entries }};
-      vm.clusters = ['', ...new Set(vm.entries.map(x => x.labels.cluster).filter(x => x))];
-      vm.cluster = ''
-      vm.levels = ['debug', 'info', 'error'];
-      vm.level = 'debug'
-      vm.filterEntries = filterEntries;
+    var app = angular.module('logify', [])
+    
+    app.controller('controller', function($scope) {
+      $scope.entries = {{ entries }};
+      $scope.clusters = ['', ...new Set($scope.entries.map(x => x.labels.cluster).filter(x => x))];
+      $scope.cluster = ''
+      $scope.levels = ['debug', 'info', 'error'];
+      $scope.level = 'info'
+      $scope.filterEntries = filterEntries;
 
       function filterEntries(obj) {
         // When the cluster is set, discard any entries
         // that do not belong to the cluster.
-        if (vm.cluster != '') {
+        if ($scope.cluster != '') {
           if (!('labels' in obj)) {
             return false
           }
           if (!('cluster' in obj.labels)) {
             return false;
           }
-          if (obj.labels.cluster != vm.cluster) {
+          if (obj.labels.cluster != $scope.cluster) {
             return false;
           }
         }
         // When the level is set, discard any enries above
         // that threshold.
-        switch (vm.level) {
+        switch ($scope.level) {
         case 'info':
           if (!['error', 'info'].includes(obj.level)) {
             return false;
@@ -49,9 +49,64 @@
     });
   </script>
 </head>
-<body ng-controller="logscontroller as $ctrl">
-  Cluster: <select ng-model="$ctrl.cluster" ng-options="x for x in $ctrl.clusters"></select>
-  Level: <select ng-model="$ctrl.level" ng-options="x for x in $ctrl.levels"></select>
+<body ng-controller="controller">
+<div id="masthead">
+<div class="logo">&#x1F334;</div>
+Logify!
+</div>
+
+<div id="content">
+{% if metadata is defined %}
+  <h2>Summary</h2>
+  <dl>
+    <dt>Platform</dt>
+    <dd>{{ metadata.platformVersion }}</dd>
+    <dt>Namespace</dt>
+    <dd>{{ metadata.namespace }}</dd>
+    <dt>Log Collection Version</dt>
+    <dd>{{ metadata.toolVersion }}</dd>
+    <dt>Operator Image</dt>
+    <dd>{{ metadata.operator.image }}</dd>
+  </dl>
+
+  <h2>Clusters</h2>
+  {% for cluster in metadata.clusters %}
+  <h3>{{ cluster.name }}</h3>
+  <dl>
+    <dt>Couchbase Server Image</dt>
+    <dd>{{ cluster.image }}</dd>
+    <dt>Events <input type="checkbox" ng-model="event{{ loop.index }}" ng-init="event{{ loop.index }}=true"></dt>
+    <dd>
+      <div ng-show="event{{ loop.index }}">
+      <table>
+        <tr>
+          <th>Timestamp</th>
+          <th>Reason</th>
+          <th>Count</th>
+          <th>Message</th>
+        </tr>
+        {% for event in cluster.events %}
+        <tr>
+          <td>{{ event.firstTimestamp }}</td>
+          <td>{{ event.reason }}</td>
+          <td>{{ event.count }}</td>
+          <td>{{ event.message }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    </dd>
+    <dt>Specification <input type="checkbox" ng-model="spec{{ loop.index }}" ng-init="spec{{ loop.index }}=false"></dt>
+    <dd><div ng-show="spec{{ loop.index }}" class="pre">{{ cluster.resource }}</div></dd>
+  </dl>
+  {% endfor %}
+{% endif %}
+
+  <h2>Logs</h2>
+  <b>Cluster:</b>
+  <select ng-model="cluster" ng-options="x for x in clusters"></select>
+  <b>Level:</b>
+  <select ng-model="level" ng-options="x for x in levels"></select>
   <br />
   <br />
   <table>
@@ -61,7 +116,7 @@
       <th class="message">Message</th>
       <th class="labels">Tags</th>
     </tr>
-    <tr ng-repeat="entry in $ctrl.entries | filter:$ctrl.filterEntries">
+    <tr ng-repeat="entry in entries | filter:filterEntries">
       <td ng-class="entry.level" ng-bind="entry.level"></td>
       <td ng-bind="entry.timestamp"></td>
       <td ng-bind="entry.message"></td>
@@ -69,11 +124,12 @@
         <div class="scrollable">
           <dl ng-repeat="(label, value) in entry.labels">
             <dt ng-bind="label"></dt>
-            <dd ng-bind="value"></dd>
+            <dd class="pre" ng-bind="value"></dd>
           </dl>
         </div>
       </td>    
     </tr>
   </table>
+</div>
 </body>
 </html>
