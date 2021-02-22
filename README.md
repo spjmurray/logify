@@ -19,6 +19,10 @@ Add a link into your PATH:
 
 ## Execution
 
-Simply specify the log file to display:
+Operator 2.2 and above:
 
-    logify logify/samples/log
+    logify path/to/cbopinfo-directory
+
+Operator 2.1 and below, specify the log file to display:
+
+    logify path/to/log-file
