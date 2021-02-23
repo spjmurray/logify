@@ -50,6 +50,10 @@ def init(args):
             with open(os.path.join(os.path.split(args.logfile)[0], cluster_yaml)) as filedesc:
                 cluster['resource'] = filedesc.read()
 
+            cluster_spec = yaml.load(cluster['resource'], Loader=yaml.SafeLoader)
+            if 'status' in cluster_spec and 'conditions' in cluster_spec['status']:
+                cluster['conditions'] = cluster_spec['status']['conditions']
+
             events_yaml = cluster['eventsPath']
             with open(os.path.join(os.path.split(args.logfile)[0], events_yaml)) as filedesc:
                 events = yaml.load(filedesc.read(), Loader=yaml.SafeLoader)

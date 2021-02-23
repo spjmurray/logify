@@ -75,6 +75,27 @@ Logify!
   <dl>
     <dt>Couchbase Server Image</dt>
     <dd>{{ cluster.image }}</dd>
+    {% if cluster.conditions is defined %}
+    <dt>Conditions <input type="checkbox" ng-model="condition{{ loop.index }}" ng-init="condition{{ loop.index }}=true"></dt>
+    <dd>
+      <table>
+        <tr>
+          <th>Last Transition</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Message</th>
+        </tr>
+        {% for condition in cluster.conditions %}
+        <tr>
+          <td>{{ condition.lastTransitionTime }}</td>
+          <td>{{ condition.reason }}</td>
+          <td>{{ condition.status }}</td>
+          <td>{{ condition.message }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </dd>
+    {% endif %}
     <dt>Events <input type="checkbox" ng-model="event{{ loop.index }}" ng-init="event{{ loop.index }}=true"></dt>
     <dd>
       <div ng-show="event{{ loop.index }}">
