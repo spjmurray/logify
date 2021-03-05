@@ -11,6 +11,7 @@ import json
 import os
 import os.path
 import stat
+import tarfile
 import tempfile
 import time
 import webbrowser
@@ -25,7 +26,7 @@ REQUIRED_KEYS = [
     u'msg',
 ]
 
-def init(args):
+def init(args, tempdir):
     """
     Init processes any arguments and returns any contextial
     information about the logs.
@@ -34,6 +35,23 @@ def init(args):
     # Default to old logs, where you refefence only the file (pre 2.2)
     logs = args.logfile
     metadata = None
+
+    # Is it an archive?  Decompress for the duration of this function,
+    # and replace the filename with the extracted archive.
+    if tarfile.is_tarfile(args.logfile):
+        archive = tarfile.open(args.logfile)
+        archive.extractall(tempdir)
+        archive.close()
+
+        # Get the archive path, bit of a hack, but we only assume the archive
+        # contains a toplevel cbopinfo-* directory.
+        with os.scandir(tempdir) as entries:
+            for entry in entries:
+                if entry.name.startswith('.'):
+                    continue
+
+                args.logfile = os.path.join(tempdir, entry.name)
+                break
 
     # Get the metadata, extract the operator logs path.  Also load up
     # any resources and add them to the metadata e.g. events and resources.
@@ -121,8 +139,12 @@ def main():
     # This is the page rendering context, accumulate information as we go along.
     context = {}
 
+    # We may need scratch space for processing, keep it open for the lifetime
+    # of the script.
+    tempdir = tempfile.TemporaryDirectory()
+
     # Parse the arguments and get any common configuration.
-    logs, metadata = init(args)
+    logs, metadata = init(args, tempdir.name)
 
     if metadata:
         context['metadata'] = metadata
