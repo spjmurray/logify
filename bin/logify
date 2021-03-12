@@ -36,10 +36,10 @@ def init(args, tempdir):
     logs = args.logfile
     metadata = None
 
-    statistics = os.stat(args.logfile)
 
     # Is it an archive?  Decompress for the duration of this function,
     # and replace the filename with the extracted archive.
+    statistics = os.stat(args.logfile)
     if stat.S_ISREG(statistics.st_mode) and tarfile.is_tarfile(args.logfile):
         archive = tarfile.open(args.logfile)
         archive.extractall(tempdir)
@@ -55,8 +55,10 @@ def init(args, tempdir):
                 args.logfile = os.path.join(tempdir, entry.name)
                 break
 
+
     # Get the metadata, extract the operator logs path.  Also load up
     # any resources and add them to the metadata e.g. events and resources.
+    statistics = os.stat(args.logfile)
     if stat.S_ISDIR(statistics.st_mode):
         with open(args.logfile + '/metadata.json') as filedesc:
             metadata = json.loads(filedesc.read())
