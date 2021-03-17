@@ -166,8 +166,8 @@ def main():
     with open(base + '/../templates/index.html') as tmp:
         template = jinja2.Template(tmp.read())
 
-    # Create a temporary file and render the content out to it.
-    filedesc, path = tempfile.mkstemp()
+    # Create a temporary file and render the content out to it - use suffix for browsers that need it to define the content.
+    filedesc, path = tempfile.mkstemp(suffix=".html")
     os.write(filedesc, template.render(**context).encode('utf-8'))
     os.close(filedesc)
 
