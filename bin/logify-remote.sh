@@ -11,7 +11,10 @@ TEST_CASE=${TEST_CASE:-$2}
 TEST_NUMBER=${TEST_NUMBER:-$3}
 
 LOGIFY_BINARY=${LOGIFY_BINARY:-${SCRIPT_DIR}/logify}
-JENKINS_URL=${JENKINS_URL:-https://jenkins.spjmurray.co.uk/job/couchbase-operator-continuous-integration/$2/artifact/logs.tar.gz}
+LOGIFY_PARAMETERS=${LOGIFY_PARAMETERS:-}
+JENKINS_SERVER=${JENKINS_SERVER:-https://jenkins.spjmurray.co.uk}
+JENKINS_JOB=${JENKINS_JOB:-couchbase-operator-continuous-integration}
+JENKINS_URL=${JENKINS_URL:-${JENKINS_SERVER}/job/${JENKINS_JOB}/$TEST_NUMBER/artifact/logs.tar.gz}
 CURL=${CURL:-curl --silent --show-error --fail --output ./logs.tgz}
 
 LOG_DIR=$(mktemp -d)
@@ -22,6 +25,7 @@ pushd "${LOG_DIR}"
     TEST_CASE_DIR=$(find "${LOG_DIR}/${LATEST_DIR}" -type d -name "${TEST_CASE}")
     CBOPINFO_ARCHIVE=$(find "${TEST_CASE_DIR}" -type f -name "cbopinfo*.tar.gz")
     tar -xzvf "${CBOPINFO_ARCHIVE}" -C ./
-    "${LOGIFY_BINARY}" "$(ls -d1 cbopinfo*)"
+    # shellcheck disable=SC2086
+    "${LOGIFY_BINARY}" $LOGIFY_PARAMETERS "$(ls -d1 cbopinfo*)"
 popd
 rm -rf "${LOG_DIR}"

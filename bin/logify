@@ -35,7 +35,7 @@ def init(args, tempdir):
     # Default to old logs, where you refefence only the file (pre 2.2)
     logs = args.logfile
     metadata = None
-
+    outputfile = args.outputfile
 
     # Is it an archive?  Decompress for the duration of this function,
     # and replace the filename with the extracted archive.
@@ -81,7 +81,7 @@ def init(args, tempdir):
                 events = sorted(events, key=lambda event: event['metadata']['creationTimestamp'])
                 cluster['events'] = events
 
-    return logs, metadata
+    return logs, metadata, outputfile
 
 
 def process_logs(logs):
@@ -136,7 +136,8 @@ def main():
     """
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('logfile')
+    parser.add_argument('logfile', help='The logfile to process')
+    parser.add_argument('-o','--outputfile', help='Output to file instead of open a browser')
     args = parser.parse_args()
 
     # This is the page rendering context, accumulate information as we go along.
@@ -147,7 +148,7 @@ def main():
     tempdir = tempfile.TemporaryDirectory()
 
     # Parse the arguments and get any common configuration.
-    logs, metadata = init(args, tempdir.name)
+    logs, metadata, outputfile = init(args, tempdir.name)
 
     if metadata:
         context['metadata'] = metadata
@@ -165,15 +166,22 @@ def main():
 
     with open(base + '/../templates/index.html') as tmp:
         template = jinja2.Template(tmp.read())
+    
+    filecontents = template.render(**context).encode('utf-8')
 
-    # Create a temporary file and render the content out to it - use suffix for browsers that need it to define the content.
-    filedesc, path = tempfile.mkstemp(suffix=".html")
-    os.write(filedesc, template.render(**context).encode('utf-8'))
-    os.close(filedesc)
+    # Determine if we are sending to a file or using a temporary and opening a browser
+    if outputfile is None :
+        # Create a temporary file and render the content out to it - use suffix for browsers that need it to define the content.
+        filedesc, path = tempfile.mkstemp(suffix=".html")
+        os.write(filedesc, filecontents)
+        os.close(filedesc)
 
-    # Finally... magic!
-    webbrowser.open_new_tab('file://' + path)
-
+        # Finally... magic!
+        webbrowser.open_new_tab('file://' + path)
+    else :
+        # Write out to the file specified
+        with open(outputfile, 'wb+') as f:
+            f.write(filecontents)
 
 if __name__ == '__main__':
     main()
