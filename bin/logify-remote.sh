@@ -22,6 +22,6 @@ pushd "${LOG_DIR}"
     TEST_CASE_DIR=$(find "${LOG_DIR}/${LATEST_DIR}" -type d -name "${TEST_CASE}")
     CBOPINFO_ARCHIVE=$(find "${TEST_CASE_DIR}" -type f -name "cbopinfo*.tar.gz")
     tar -xzvf "${CBOPINFO_ARCHIVE}" -C ./
-    "${LOGIFY_BINARY}" $(ls -d1 cbopinfo*)
+    "${LOGIFY_BINARY}" "$(ls -d1 cbopinfo*)"
 popd
 rm -rf "${LOG_DIR}"
