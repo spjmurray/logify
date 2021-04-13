@@ -5,7 +5,8 @@ Simple JSON log parser for the Couchbase Operator 2.0.0 that presents them in hu
 ## Prerequisites
 
 * python
-* python-jinja2
+* jinja2
+* pyyaml
 
 ## Installation
 
