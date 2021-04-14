@@ -8,6 +8,10 @@ Simple JSON log parser for the Couchbase Operator 2.0.0 that presents them in hu
 * jinja2
 * pyyaml
 
+Or in general, and far less likely to be out of date:
+
+    pip3 install requirements.txt
+
 ## Installation
 
 Clone the repo:
