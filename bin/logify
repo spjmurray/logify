@@ -167,7 +167,7 @@ def main():
         template = jinja2.Template(tmp.read())
 
     # Create a temporary file and render the content out to it.
-    filedesc, path = tempfile.mkstemp()
+    filedesc, path = tempfile.mkstemp(suffix='.html')
     os.write(filedesc, template.render(**context).encode('utf-8'))
     os.close(filedesc)
 
