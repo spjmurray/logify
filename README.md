@@ -20,7 +20,7 @@ Clone the repo:
 
 Add a link into your PATH:
 
-    ln -s ${PWD}/logify/bin/logify ~/bin
+    ln -s ${PWD}/logify/bin/logify /usr/local/bin
 
 ## Execution
 
@@ -31,3 +31,10 @@ Operator 2.2 and above:
 Operator 2.1 and below, specify the log file to display:
 
     logify path/to/log-file
+
+### Timezones
+
+By default, the script will render dates in the local time zone.
+If you want to embrace your inner Cher and turn back time, you can do by specifying the timezone:
+
+    TZ=Asia/Tokyo logify path/to/logs
