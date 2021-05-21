@@ -19,6 +19,8 @@ import yaml
 
 import jinja2
 
+# pylint: disable=line-too-long
+
 # These are the keys that are required/expected by each log entry.
 REQUIRED_KEYS = [
     u'level',
