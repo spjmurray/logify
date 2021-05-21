@@ -75,11 +75,12 @@ def init(args, tempdir):
             if 'status' in cluster_spec and 'conditions' in cluster_spec['status']:
                 cluster['conditions'] = cluster_spec['status']['conditions']
 
-            events_yaml = cluster['eventsPath']
-            with open(os.path.join(os.path.split(args.logfile)[0], events_yaml)) as filedesc:
-                events = yaml.load(filedesc.read(), Loader=yaml.SafeLoader)
-                events = sorted(events, key=lambda event: event['metadata']['creationTimestamp'])
-                cluster['events'] = events
+            if 'eventsPath' in cluster:
+                events_yaml = cluster['eventsPath']
+                with open(os.path.join(os.path.split(args.logfile)[0], events_yaml)) as filedesc:
+                    events = yaml.load(filedesc.read(), Loader=yaml.SafeLoader)
+                    events = sorted(events, key=lambda event: event['metadata']['creationTimestamp'])
+                    cluster['events'] = events
 
     return logs, metadata
 
