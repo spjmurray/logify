@@ -66,7 +66,11 @@ Logify!
     <dt>Log Collection Version</dt>
     <dd>{{ metadata.toolVersion }}</dd>
     <dt>Operator Image</dt>
+    {% if metadata.operator is defined %}
     <dd>{{ metadata.operator.image }}</dd>
+    {% else %}
+    <dd>Undefined</dd>
+    {% endif %}
   </dl>
 
   <h2>Clusters</h2>
